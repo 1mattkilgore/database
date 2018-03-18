@@ -1,1 +1,11 @@
 CREATE TABLE library (id INT, title VARCHAR2(40), authorlast VARCHAR2(40), authorfirst VARCHAR2(40));
+INSERT INTO library VALUES (1, 'East of Eden', 'Steinbeck', 'John');
+INSERT INTO library VALUES (2, 'Grapes of Wrath', 'Steinbeck', 'John');
+INSERT INTO library VALUES (3, 'Of Mice and Men', 'Steinbeck', 'John');
+INSERT INTO library VALUES (4, 'The Brother Karamazov', 'Dostoevsky', 'Fyodor');
+INSERT INTO library VALUES (5, 'The Moviegoer', 'Percy', 'Walker');
+INSERT INTO library VALUES (6, 'The Last Gentleman', 'Percy', 'Walker');
+INSERT INTO library VALUES (7, 'Les Miserables', 'Hugo', 'Victor');
+INSERT INTO library VALUES (8, 'Beloved', 'Morrison', 'Toni);
+INSERT INTO library VALUES (9, 'The Optimist''s Daughter', 'Welty', 'Eudora');
+INSERT INTO library VALUES (10, 'Anna Karenina', 'Tolstoy', 'Leo');

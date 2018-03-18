@@ -1,4 +1,5 @@
 CREATE TABLE library (id INT PRIMARY KEY, title VARCHAR2(40) NOT NULL, authorlast VARCHAR2(40), authorfirst VARCHAR2(40));
+
 INSERT INTO library VALUES (1, 'East of Eden', 'Steinbeck', 'John');
 INSERT INTO library VALUES (2, 'Grapes of Wrath', 'Steinbeck', 'John');
 INSERT INTO library VALUES (3, 'Of Mice and Men', 'Steinbeck', 'John');
@@ -9,3 +10,13 @@ INSERT INTO library VALUES (7, 'Les Miserables', 'Hugo', 'Victor');
 INSERT INTO library VALUES (8, 'Beloved', 'Morrison', 'Toni);
 INSERT INTO library VALUES (9, 'The Optimist''s Daughter', 'Welty', 'Eudora');
 INSERT INTO library VALUES (10, 'Anna Karenina', 'Tolstoy', 'Leo');
+
+SELECT * FROM library;
+SELECT id, title, authorlast FROM library WHERE id > 3;
+SELECT DISTINCT authorlast FROM library;
+SELECT COUNT(DISTINCT authorlast) FROM library; 
+SELECT title FROM library WHERE authorlast = 'Steinbeck';
+SELECT * FROM library WHERE NOT authorlast = 'Steinbeck' AND NOT title = 'Anna Karenina';
+SELECT * FROM library WHERE authorlast = 'Steinbeck' AND (title = 'East of Eden' OR title = 'Of Mice and Men');
+SELECT * FROM libary WHERE id <= 5 ORDER BY authorlast, authorfirst; 
+SELECT * FROM library ORDER BY authorlast ASC, title DESC;

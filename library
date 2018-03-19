@@ -20,3 +20,11 @@ SELECT * FROM library WHERE NOT authorlast = 'Steinbeck' AND NOT title = 'Anna K
 SELECT * FROM library WHERE authorlast = 'Steinbeck' AND (title = 'East of Eden' OR title = 'Of Mice and Men');
 SELECT * FROM libary WHERE id <= 5 ORDER BY authorlast, authorfirst; 
 SELECT * FROM library ORDER BY authorlast ASC, title DESC;
+
+INSERT INTO library (id, title, authorlast) VALUES (11, 'Republic', 'Plato');
+
+SELECT title FROM library WHERE authorfirst IS NULL;
+SELECT title FROM library WHERE authorfirst IS NOT NULL;
+
+UPDATE libary SET title = 'Song of Solomon' WHERE id = 8; 
+UPDATE library SET title = 'The Great Gatsby', authorlast = 'Fitzgerald', authorfirst = 'F. Scott' WHERE id = 10;

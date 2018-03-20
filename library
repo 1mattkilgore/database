@@ -1,3 +1,5 @@
+
+
 CREATE TABLE library (id INT PRIMARY KEY, title VARCHAR2(40) NOT NULL, authorlast VARCHAR2(40), authorfirst VARCHAR2(40));
 
 INSERT INTO library VALUES (1, 'East of Eden', 'Steinbeck', 'John');
@@ -28,3 +30,11 @@ SELECT title FROM library WHERE authorfirst IS NOT NULL;
 
 UPDATE libary SET title = 'Song of Solomon' WHERE id = 8; 
 UPDATE library SET title = 'The Great Gatsby', authorlast = 'Fitzgerald', authorfirst = 'F. Scott' WHERE id = 10;
+
+DELETE FROM library WHERE authorlast = 'Hugo';
+
+SELECT * FROM library WHERE ROWNUM <= 5;
+SELECT title FROM library ORDER BY authorlast OFFSET 4 FETCH NEXT 3 ROWS ONLY;
+
+SELECT MAX(id) AS HIGHEST_ID_IN_LIBRARY FROM library; 
+

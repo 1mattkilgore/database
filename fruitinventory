@@ -1,0 +1,28 @@
+CREATE TABLE fruitinventory (id INT PRIMARY KEY, fruitname VARCHAR2(30) NOT NULL, unitsinmillions INT NOT NULL);
+ALTER TABLE fruitinventory ADD CONSTRAINT fruitinventoryconst UNIQUE(fruitname);
+
+INSERT INTO fruitinventory VALUES (1, 'Apples', 23);
+INSERT INTO fruitinventory VALUES (2, 'Oranges', 22);
+INSERT INTO fruitinventory VALUES (3, 'Pears', 12);
+INSERT INTO fruitinventory VALUES (4, 'Watermelons', 33);
+INSERT INTO fruitinventory VALUES (5, 'Kiwis', 11);
+INSERT INTO fruitinventory VALUES (6, 'Bananas', 43);
+INSERT INTO fruitinventory VALUES (7, 'Pineapples', 9);
+
+SELECT COUNT (id) FROM fruitinventory;
+SELECT AVG (unitsinmillions) FROM fruitinventory;
+SELECT SUM (unitsinmillions) FROM fruitinventory;
+
+SELECT * FROM fruitinventory WHERE fruitname LIKE 'P%';
+SELECT * FROM fruitinventory WHERE fruitname LIKE '%s';
+SELECT * FROM fruitinventory WHERE fruitname LIKE '%es';
+SELECT * FROM fruitinventory WHERE fruitname LIKE '%an%';
+SELECT * FROM fruitinventory WHERE fruitname LIKE '_a%';
+SELECT * FROM fruitinventory WHERE fruitname LIKE 'P%s';
+SELECT * FROM fruitinventory WHERE fruitname NOT LIKE 'P%';
+SELECT * FROM fruitinventory WHERE fruitname NOT LIKE '%s';
+SELECT * FROM fruitinventory WHERE fruitname LIKE '_iwis';
+SELECT * FROM fruitinventory WHERE fruitname LIKE '[AOP]%';
+SELECT * FROM fruitinventory WHERE fruitname LIKE '[A-O]%';
+SELECT * FROM fruitinventory WHERE fruitname LIKE '[!P-Z]%';
+

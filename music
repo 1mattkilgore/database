@@ -1,0 +1,30 @@
+CREATE TABLE artistsales (id INT PRIMARY KEY, name VARCHAR2(30) NOT NULL, salesinmillions INT NOT NULL, recordcompany INT, city VARCHAR2(30));
+CREATE TABLE recordcompany (id INT, name VARCHAR2(40) NOT NULL, city VARCHAR2(30));
+
+INSERT INTO artistsales (1, 'The Beatles', 565, 1, 'Liverpool');
+INSERT INTO artistsales (2, 'The Shins', 123, 2, 'Boston');
+INSERT INTO artistsales (3, 'The Byrds', 44, 3, 'Detroit');
+INSERT INTO artistsales (4, 'Bob Dylan', 231, 1, 'Minneapolis');
+INSERT INTO artistsales (5, 'Yes', 53, 3, 'Boston');
+
+INSERT INTO recordcompany (1, 'Columbia', 'Liverpool');
+INSERT INTO recordcompany (2, 'Universal', 'Boston');
+INSERT INTO recordcompany (3, 'Nonesuch', 'New York');
+INSERT INTO recordcompany (4, 'Blue Note', 'Cleveland');
+
+SELECT * FROM artistsales WHERE name IN ('The Shins', 'The Byrds');
+SELECT * FROM artistsales WHERE name NOT IN ('Yes', 'The Beatles');
+
+SELECT * FROM artistsales WHERE city IN (SELECT city FROM recordcompany);
+
+SELECT * FROM artistsales WHERE salesinmillions BETWEEN 100 AND 200;
+SELECT * FROM artistsales WHERE salesinmillions NOT BETWEEN 1 AND 150;
+
+SELECT * FROM artistsales WHERE (salesinmillions BETWEEN 100 and 700) AND NOT city IN ('Boston', 'Detroit');
+
+SELECT * FROM recordcompany WHERE city BETWEEN 'Boston' AND 'Liverpool';
+
+SELECT name AS ARTIST_NAME, city AS CITY_NAME FROM artistsales;
+SELECT city AS [City of Artist] FROM artistsales;
+SELECT name, CONCAT(' is from ', city) FROM artistsales;
+SELECT a.name, b.name FROM artistsales AS a, recordcompany AS b;

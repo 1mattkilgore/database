@@ -10,6 +10,6 @@ INSERT INTO bandsfavorites VALUES (8, 'Lucinda Williams', 2);
 INSERT INTO bandsfavorites VALUES (9, 'R.E.M.', 3);
 INSERT INTO bandsfavorites (id, name) VALUES (10, 'Frank Sinatra');
 
-SELECT b.name||' is the favorite band of '|a.name
+SELECT b.name||' is the favorite band of '|a.name "Musician favorites"
 FROM bandsfavorites a, bandsfavorites b
 WHERE a.favoriteid = b.id;

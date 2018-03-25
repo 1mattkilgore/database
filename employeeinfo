@@ -9,12 +9,13 @@ INSERT INTO cityinfo VALUES (3, 'Topeka, KS');
 INSERT INTO deptinfo VALUES (1, 'Accounts');
 INSERT INTO deptinfo VALUES (2, 'Accounting');
 INSERT INTO deptinfo VALUES (3, 'IT');
+INSERT INTO deptinfo VALUES (4, 'Communications');
 
 INSERT INTO employeeinfo VALUES (1, 'Bob Smith', 2, 3);
 INSERT INTO employeeinfo VALUES (2, 'Art Vandelay', 1, 1);
 INSERT INTO employeeinfo VALUES (3, 'John Smith', 3, 2);
 INSERT INTO employeeinfo VALUES (4, 'Frank Capra', 1, 3);
-INSERT INTO employeeinfo VALUES (5, 'Fred Willard', 2, 5);
+INSERT INTO employeeinfo VALUES (5, 'Fred Willard', 5, 5);
 
 SELECT   e.name, d.name, c.name 
 FROM employeeinfo e JOIN deptinfo d ON e.deptid = d.id 
@@ -24,3 +25,13 @@ SELECT e.name, c.name
 FROM employeeinfo e
 LEFT JOIN cityinfo c
 ON e.cityid = c.id;
+
+SELECT e.name, d.name
+FROM employeeinfo e
+RIGHT JOIN deptinfo d
+ON e.deptid = d.id;
+
+SELECT e.name, d.name
+FROM employeeinfo e
+FULL OUTER JOIN deptinfo d
+ON e.deptid = d.id; 

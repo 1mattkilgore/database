@@ -1,0 +1,15 @@
+CREATE TABLE bandsfavorites (id, name VARCHAR2(30) NOT NULL, favoriteid INT);
+INSERT INTO bandsfavorites VALUES (1, 'The Smiths', 5);
+INSERT INTO bandsfavorites VALUES (2, 'The Beatles', 10);
+INSERT INTO bandsfavorites (id, name) VALUES (3, 'Aretha Franklin');
+INSERT INTO bandsfavorites VALUES (4, 'Radiohead', 6);
+INSERT INTO bandsfavorites VALUES (5, 'Joni Mitchell', 3);
+INSERT INTO bandsfavorites VALUES (6, 'Steely Dan', );
+INSERT INTO bandsfavorites (id, name) VALUES (7, 'Bob Dylan');
+INSERT INTO bandsfavorites VALUES (8, 'Lucinda Williams', 2);
+INSERT INTO bandsfavorites VALUES (9, 'R.E.M.', 3);
+INSERT INTO bandsfavorites (id, name) VALUES (10, 'Frank Sinatra');
+
+SELECT b.name||' is the favorite band of '|a.name
+FROM bandsfavorites a, bandsfavorites b
+WHERE a.favoriteid = b.id;
